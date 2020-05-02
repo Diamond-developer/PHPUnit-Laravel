@@ -3,6 +3,10 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+//
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
@@ -17,6 +21,13 @@ class ExampleTest extends TestCase
 
         $response = $this->get('/');
 
+//        $this->visit('/');
+//        $this->click("Click me");
+//        $this->see("You've been clicked, punk.");
+//        $this->seePageIs("/feedback");
+
         $response->assertStatus(200);
+
     }
 }
+
