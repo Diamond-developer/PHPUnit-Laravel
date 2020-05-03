@@ -21,10 +21,13 @@ class ExampleTest extends TestCase
 
         $response = $this->get('/');
 
-//        $this->visit('/');
-//        $this->click("Click me");
-//        $this->see("You've been clicked, punk.");
-//        $this->seePageIs("/feedback");
+        /*
+         * browser testing: https://laravel.com/docs/7.x/dusk
+        $this->visit('/');
+        $this->click("Click me");
+        $this->see("You've been clicked, punk.");
+        $this->seePageIs("/feedback");
+        */
 
         $response->assertStatus(200);
 

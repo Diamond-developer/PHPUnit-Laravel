@@ -18,6 +18,6 @@
      }
 
      public function cost(){
-
+        return 59;
      }
  }

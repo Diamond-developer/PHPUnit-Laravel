@@ -1,12 +1,14 @@
 <?php
+namespace Tests\Unit;
 
 use App\Product;
+use PHPUnit\Framework\TestCase;
 
-class ProductTest extends PHPUnit_Framework_TestCase
+class ProductTest extends TestCase
 {
     protected $product;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->product = new Product('Fallout',59);
     }
@@ -14,7 +16,7 @@ class ProductTest extends PHPUnit_Framework_TestCase
     /** @test */
     function a_product_has_a_name()
     {
-        $this->assertEquals('Fallout 4',$this->product->name());
+        $this->assertEquals('Fallout',$this->product->name());
     }
 
     /** @test */
