@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','team_id'
     ];
 
     /**
@@ -27,6 +27,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function leaveTeam()
+    {
+        $this->team_id=null;
+        $this->save();
+
+        return $this;
+    }
 
     /**
      * The attributes that should be cast to native types.

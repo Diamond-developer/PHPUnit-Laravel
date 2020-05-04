@@ -13,11 +13,20 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        Schema::create('teams', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('size')->unsigned();
+            $table->timestamps();
+        });
+
+        //
         Schema::create('users', function (Blueprint $table) {
             $table->id();
 
             $table->string('title');
             $table->integer('read')->default(0);
+            $table->integer('team_id')->unsigned()->nullable()->index();
 
             $table->string('name');
             $table->string('email')->unique();
