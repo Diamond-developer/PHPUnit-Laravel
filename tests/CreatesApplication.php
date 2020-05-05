@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use App\User;
 use Illuminate\Contracts\Console\Kernel;
 
 trait CreatesApplication
@@ -11,6 +12,9 @@ trait CreatesApplication
      *
      * @return \Illuminate\Foundation\Application
      */
+
+    protected $user;
+
     public function createApplication()
     {
         $app = require __DIR__.'/../bootstrap/app.php';
@@ -18,5 +22,18 @@ trait CreatesApplication
         $app->make(Kernel::class)->bootstrap();
 
         return $app;
+    }
+
+    public function signIn($user=null)
+    {
+        if(! $user){
+            $user=factory(User::class)->create();
+        }
+
+        $this->user=$user;
+
+        $this->actingAs($this->user);
+
+        return $this;
     }
 }
