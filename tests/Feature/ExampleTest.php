@@ -63,7 +63,7 @@ class ExampleTest extends TestCase
     }
 
 
-    /**@Test*/
+    /**@Test.*/
     function it_normalizes_an_array_for_the_cache_key()
     {
         $cache = $this->prophesize(RussianCache::class);

@@ -37,7 +37,7 @@ class ReplyParserTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('<h3>Heading</h3>foo', $body);
     }
 
-    /**@test*/
+    /**@test.*/
     function it_converts_links_to_anchor_tags()
     {
         $body = $this->parser->parse(
