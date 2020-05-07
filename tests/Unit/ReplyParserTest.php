@@ -72,4 +72,4 @@ class ReplyParserTest extends PHPUnit_Framework_TestCase
             "Go to <a href='http://foo.com/@bar' target='_blank'>http://foo.com/@bar</a> - check with <a href='@foo.bar'>@foo.bar</a>", $body
         );
     }
-}}
+}
